@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   3D ANIMATION & MODERN UI SYSTEM
+   ========================================= */
+
+/* --- Perspective Container --- */
+.perspective {
+  perspective: 1000px;
+}
+.perspective-sm {
+  perspective: 600px;
+}
+
+/* --- 3D Card Tilt --- */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+  will-change: transform;
+}
+.card-3d:hover {
+  transform: rotateX(-4deg) rotateY(6deg) translateZ(12px);
+  box-shadow: 20px 20px 60px rgba(139, 92, 246, 0.15), -4px -4px 20px rgba(34, 211, 238, 0.05);
+}
+
+/* --- 3D Float Animation --- */
+@keyframes float3d {
+  0%, 100% { transform: translateY(0px) rotateX(0deg); }
+  33%       { transform: translateY(-12px) rotateX(2deg); }
+  66%       { transform: translateY(-6px) rotateX(-1deg); }
+}
+.float-3d {
+  animation: float3d 6s ease-in-out infinite;
+}
+
+/* --- Scroll Reveal --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px) translateZ(-20px);
+  transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px) translateZ(-20px);
+  transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0) translateZ(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px) translateZ(-20px);
+  transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0) translateZ(0);
+}
+
+/* --- Stagger Delays --- */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+.delay-600 { transition-delay: 0.6s; }
+
+/* --- Glowing Border --- */
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(139, 92, 246, 0.3); box-shadow: 0 0 10px rgba(139, 92, 246, 0.1); }
+  50%       { border-color: rgba(34, 211, 238, 0.5); box-shadow: 0 0 20px rgba(34, 211, 238, 0.15); }
+}
+.glow-border {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* --- 3D Orb Background Blobs --- */
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(20px, -30px) scale(1.05); }
+  66%       { transform: translate(-15px, 15px) scale(0.97); }
+}
+.orb-animate {
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.orb-animate-alt {
+  animation: orbFloat 10s ease-in-out infinite reverse;
+}
+
+/* --- Shimmer Effect --- */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #a78bfa, #67e8f9, #a78bfa);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* --- Neon Glow on Icons --- */
+@keyframes neonPulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(139, 92, 246, 0.6)); }
+  50%       { filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.8)); }
+}
+.icon-neon {
+  animation: neonPulse 2.5s ease-in-out infinite;
+}
+
+/* --- 3D Badge Spin on hover --- */
+.badge-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+.badge-3d:hover {
+  transform: rotateY(15deg) scale(1.05);
+}
+
+/* --- Skill Bar Fill Animation --- */
+@keyframes fillBar {
+  from { width: 0%; }
+  to   { width: var(--fill); }
+}
+.skill-fill {
+  animation: fillBar 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  width: 0%;
+}
+
+/* --- Particle Canvas overlay (pointer-events: none) --- */
+.particle-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Typewriter Cursor --- */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor-blink::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: #a78bfa;
+  margin-left: 2px;
+}
+
+/* --- Glass Card Depth --- */
+.glass-depth {
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.glass-depth:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* --- Achievement Star Pulse --- */
+@keyframes starPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%       { transform: scale(1.15) rotate(5deg); }
+}
+.star-pulse {
+  animation: starPulse 2s ease-in-out infinite;
+}
+
+/* --- Timeline 3D line glow --- */
+@keyframes lineGlow {
+  0%, 100% { background: linear-gradient(to bottom, #7c3aed, #0891b2); }
+  50%       { background: linear-gradient(to bottom, #06b6d4, #8b5cf6); }
+}
+.timeline-line {
+  animation: lineGlow 3s ease-in-out infinite;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111827; }
+::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #7c3aed, #0891b2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #8b5cf6, #22d3ee); }
