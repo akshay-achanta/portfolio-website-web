@@ -1,95 +1,56 @@
-import {ExternalLink, Github, Building, Globe, CheckCircle, Database, Layers, Monitor} from 'lucide-react'
+import {ExternalLink, Github, Building, Globe, CheckCircle, Layers, Monitor} from 'lucide-react'
 
 const Portfolio = () => {
   const projects = [
     {
-      title: "SeaSphere",
-      description: "A high-performance, modular workspace designed for personal and business collaboration. Features real-time dashboards, social-style updates feed, world clock widget, and a dual-sidebar system.",
-      tech: ["React.js 18+", "Supabase (PostgreSQL)", "Vanilla CSS", "FontAwesome", "Vite"],
-      category: "Full Stack SaaS App",
-      status: "Completed",
-      icon: Layers,
-      gradient: "from-blue-500 to-cyan-500",
-      github: "https://github.com/akshay-achanta/SeaSphere",
-      live: "https://sea-sphere.vercel.app",
-      highlights: [
-        "Personal & Business workspaces with role-based dashboards",
-        "Social-style updates feed with Public/Teams/Friends visibility",
-        "World Clocks Widget with analog/digital display for remote teams",
-        "Dual-sidebar system, dark mode glassmorphism, fully responsive"
-      ]
-    },
-    {
       title: "AI-Driven Daily Tracker (isaw)",
-      description: "A production-ready productivity tracking application providing AI-based insights into daily habits and schedules. Features interactive dashboards and comprehensive tracking modules.",
-      tech: ["React (Vite)", "Tailwind CSS v4", "FastAPI", "PostgreSQL", "Recharts", "JWT Auth"],
+      description: "A productivity app delivering AI-based insights into daily habits using FastAPI and React.",
+      tech: ["React", "FastAPI", "PostgreSQL", "Recharts"],
       category: "Full Stack AI Project",
       status: "Completed",
       icon: Globe,
       gradient: "from-purple-500 to-cyan-500",
       github: "https://github.com/akshay-achanta/isaw",
-      live: "https://poetic-reflection-production.up.railway.app",
-      highlights: [
-        "Interactive Dashboard visualizing productivity data with Recharts",
-        "AI-Driven rule-based feedback on daily habits and schedules",
-        "Secure JWT authentication and Swagger/OpenAPI documentation",
-        "Excel export capabilities for full data portability"
-      ]
+      live: "https://poetic-reflection-production.up.railway.app"
+    },
+    {
+      title: "SeaSphere",
+      description: "Modular collaborative workspace with real-time dashboards and team widgets.",
+      tech: ["React", "Supabase", "Vite"],
+      category: "Full Stack SaaS App",
+      status: "Completed",
+      icon: Layers,
+      gradient: "from-blue-500 to-cyan-500",
+      github: "https://github.com/akshay-achanta/SeaSphere",
+      live: "https://sea-sphere.vercel.app"
     },
     {
       title: "vSkillIU Website Design",
-      description: "Modern, responsive website design for vSkillIU — an online learning and skill development platform. Built with a focus on clean UI/UX, conversion-optimized layouts, and accessibility.",
-      tech: ["React.js", "Tailwind CSS", "Responsive Design", "UI/UX"],
+      description: "Conversion-optimized landing page for an online learning platform with modern UI/UX.",
+      tech: ["React.js", "Tailwind CSS", "UI/UX Design"],
       category: "Frontend Design Project",
       status: "Completed",
       icon: Monitor,
       gradient: "from-green-500 to-teal-500",
-      github: "https://github.com/akshay-achanta/v0-vskilliu-website-design",
-      highlights: [
-        "Conversion-optimized landing page with modern hero section",
-        "Courses showcase with category-based filtering",
-        "Responsive and accessible across all device sizes",
-        "Clean component structure for easy extensibility"
-      ]
+      github: "https://github.com/akshay-achanta/v0-vskilliu-website-design"
     },
     {
       title: "Project JYSWMS",
-      description: "Warehouse Management System automation and integration. Focused on validating complex business scenarios and enterprise workflow automation.",
-      tech: ["Oracle NetSuite", "SuiteScript 2.0", "REST APIs", "Integration Testing"],
+      description: "WMS automation via Oracle NetSuite and SuiteScript 2.0 to reduce workflow exceptions.",
+      tech: ["NetSuite", "SuiteScript 2.0", "REST APIs"],
       category: "Enterprise ERP Project",
       status: "Completed",
       icon: Building,
-      gradient: "from-blue-500 to-indigo-500",
-      highlights: [
-        "Validated 50+ integration scenarios for a large-scale WMS",
-        "Developed SuiteScript 2.0 customizations reducing workflow exceptions by 25%",
-        "Identified and resolved 10+ high-severity defects pre-launch",
-        "Improved system uptime and reliability for warehouse operations"
-      ]
+      gradient: "from-blue-500 to-indigo-500"
     },
     {
       title: "Project Bailey Crances",
-      description: "End-to-End QA testing for complex application modules. Implementing rigorous regression and functional testing protocols.",
-      tech: ["Jira", "Regression Testing", "Functional Testing", "Defect Tracking"],
+      description: "End-to-End QA testing and defect tracking for complex application modules.",
+      tech: ["Jira", "Regression Testing", "Functional Testing"],
       category: "Quality Assurance Project",
       status: "Completed",
       icon: CheckCircle,
-      gradient: "from-green-500 to-teal-500",
-      highlights: [
-        "Executed daily regression and functional testing across 3+ application modules",
-        "Logged 20+ defects with structured reproduction steps",
-        "Accelerated fix cycles by 35% through detailed documentation",
-        "Maintained zero-missed-deadline record across sprint deliverables"
-      ]
-    },
-    {
-      title: "Portfolio Website",
-      description: "Modern, responsive portfolio website built with React and TypeScript. Features dark theme, glassmorphism, and dynamic animations.",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Lucide Icons"],
-      category: "Personal Brand",
-      status: "In Progress",
-      icon: Database,
-      gradient: "from-orange-500 to-red-500"
+      gradient: "from-green-500 to-teal-500"
     }
   ]
 
@@ -138,24 +99,10 @@ const Portfolio = () => {
                 </div>
 
                 <div className="mb-4">
-                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-2 font-display">{project.title}</h3>
                   <p className="text-sm text-purple-300 mb-3">{project.category}</p>
                   <p className="text-gray-300 leading-relaxed mb-4">{project.description}</p>
                 </div>
-
-                {project.highlights && (
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-white mb-3 uppercase tracking-wider">Key Highlights</h4>
-                    <ul className="space-y-2 text-sm text-gray-400">
-                      {project.highlights.map((highlight, hIndex) => (
-                        <li key={hIndex} className="flex items-start space-x-2">
-                          <CheckCircle size={14} className="mt-1 text-purple-400 flex-shrink-0" />
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
 
                 <div className="mb-6">
                   <div className="flex flex-wrap gap-2">
@@ -166,6 +113,7 @@ const Portfolio = () => {
                     ))}
                   </div>
                 </div>
+
 
                 <div className="flex space-x-3 mt-auto">
                   {project.github && (

@@ -90,8 +90,22 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* Technical Skills */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        {/* Core CS Concepts - Moved to Top */}
+        <div className="mb-16 text-center reveal">
+          <div className="bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-2xl p-8 border border-purple-400/20 glow-border">
+            <h3 className="text-2xl font-bold text-white mb-6 font-display">Core CS & Programming</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {["Data Structures", "Algorithms", "OOP", "System Design", "Python", "Java", "SQL", "C", "C++"].map((skill) => (
+                <span key={skill} className="badge-3d px-4 py-2 glass-depth text-gray-300 rounded-xl text-sm border border-gray-600/30 hover:border-purple-400/40 hover:text-purple-300 transition-all duration-300">
+                  <span className="mr-2 text-purple-400">💻</span>{skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Technical Skills - Badges Instead of Bars */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, categoryIndex) => {
             const IconComponent = category.icon
             return (
@@ -100,24 +114,34 @@ const Skills = () => {
                   <div className="p-3 bg-purple-500/20 rounded-xl border border-purple-400/30 mr-4 float-3d">
                     <IconComponent className="text-purple-400 icon-neon" size={24} />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+                  <h3 className="text-2xl font-bold text-white font-display">{category.title}</h3>
                 </div>
                 
-                <div className="space-y-6">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="group">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-gray-300 font-medium">{skill.name}</span>
-                        <span className="text-gray-400 text-sm">{skill.level}%</span>
+                <div className="flex flex-wrap gap-3">
+                  {category.skills.map((skill, skillIndex) => {
+                    let levelIcon = "🔵"
+                    let levelText = "Learning"
+                    let badgeColor = "border-blue-500/30 text-blue-300 bg-blue-500/5"
+                    
+                    if (skill.level >= 90) {
+                      levelIcon = "🟢"
+                      levelText = "Proficient"
+                      badgeColor = "border-emerald-500/30 text-emerald-300 bg-emerald-500/5"
+                    } else if (skill.level >= 80) {
+                      levelIcon = "🟡"
+                      levelText = "Familiar"
+                      badgeColor = "border-yellow-500/30 text-yellow-300 bg-yellow-500/5"
+                    }
+
+                    return (
+                      <div key={skillIndex} className={`badge-3d flex items-center space-x-2 px-3 py-1.5 rounded-lg border ${badgeColor} transition-transform`}>
+                        <span className="font-semibold text-gray-100">{skill.name}</span>
+                        <span className="text-[10px] uppercase tracking-wider opacity-80 flex items-center gap-1">
+                           {levelIcon} {levelText}
+                        </span>
                       </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
-                        <div 
-                          className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out transform group-hover:scale-105`}
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
             )
@@ -125,10 +149,10 @@ const Skills = () => {
         </div>
 
         {/* Soft Skills */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center mb-12">
+        <div className="mb-16 reveal">
+          <h3 className="text-3xl font-bold text-center mb-12 font-display">
             <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Soft Skills & Leadership
+              Collaborative DNA
             </span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -141,7 +165,7 @@ const Skills = () => {
                       <IconComponent className="text-purple-400" size={24} />
                     </div>
                   </div>
-                  <h4 className="text-lg font-semibold text-white mb-3">{skill.name}</h4>
+                  <h4 className="text-lg font-semibold text-white mb-3 font-display">{skill.name}</h4>
                   <p className="text-gray-400 text-sm leading-relaxed">{skill.description}</p>
                 </div>
               )
@@ -149,50 +173,6 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Languages */}
-        <div className="reveal card-3d glass-depth rounded-2xl p-8 border border-gray-700/30">
-          <h3 className="text-2xl font-bold text-white text-center mb-8">Languages</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-gradient-to-br from-purple-500/10 to-purple-600/10 rounded-xl border border-purple-400/20 hover:border-purple-400/40 transition-all duration-300">
-              <div className="text-4xl mb-3">🇬🇧</div>
-              <h4 className="text-xl font-semibold text-purple-300 mb-2">English</h4>
-              <p className="text-gray-400 mb-3">Professional Proficiency</p>
-              <div className="w-full bg-gray-700 rounded-full h-2">
-                <div className="bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full w-full"></div>
-              </div>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-cyan-500/10 to-cyan-600/10 rounded-xl border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300">
-              <div className="text-4xl mb-3">🇮🇳</div>
-              <h4 className="text-xl font-semibold text-cyan-300 mb-2">Hindi</h4>
-              <p className="text-gray-400 mb-3">Conversational</p>
-              <div className="w-full bg-gray-700 rounded-full h-2">
-                <div className="bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full w-[70%]"></div>
-              </div>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-blue-500/10 to-blue-600/10 rounded-xl border border-blue-400/20 hover:border-blue-400/40 transition-all duration-300">
-              <div className="text-4xl mb-3">🏛️</div>
-              <h4 className="text-xl font-semibold text-blue-300 mb-2">Telugu</h4>
-              <p className="text-gray-400 mb-3">Native</p>
-              <div className="w-full bg-gray-700 rounded-full h-2">
-                <div className="bg-gradient-to-r from-blue-500 to-blue-400 h-2 rounded-full w-full"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Core CS Concepts */}
-        <div className="mt-16 text-center">
-          <div className="reveal bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-2xl p-8 border border-purple-400/20 glow-border">
-            <h3 className="text-2xl font-bold text-white mb-4">Core CS & Programming</h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {["Data Structures", "Algorithms", "OOP", "System Design", "Python", "Java", "SQL", "C", "C++"].map((skill) => (
-                <span key={skill} className="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-full text-sm border border-gray-600/30 hover:border-purple-400/30 transition-colors">
-                  💻 {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   )

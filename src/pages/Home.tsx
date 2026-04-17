@@ -1,8 +1,37 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {ChevronDown, Download, Mail, Github, Linkedin, Briefcase, Award, Instagram} from 'lucide-react'
 
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null)
+  
+  // Typewriter Effect
+  const roles = ["Full Stack Developer", "Data Analyst", "AI & Data Science Enthusiast"];
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const fullText = roles[roleIndex];
+      setDisplayedText(prev => isDeleting 
+        ? fullText.substring(0, prev.length - 1)
+        : fullText.substring(0, prev.length + 1)
+      );
+
+      setTypingSpeed(isDeleting ? 50 : 150);
+
+      if (!isDeleting && displayedText === fullText) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && displayedText === "") {
+        setIsDeleting(false);
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [displayedText, isDeleting, roleIndex, roles, typingSpeed]);
 
   useEffect(() => {
     // Scroll reveal
@@ -14,6 +43,7 @@ const Home = () => {
       .forEach(el => observer.observe(el))
     return () => observer.disconnect()
   }, [])
+
 
   // 3D tilt on hero photo
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -32,7 +62,7 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={heroRef}>
+    <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden hero-bg-animate" ref={heroRef}>
       {/* 3D Animated Background Orbs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="orb-animate absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -64,23 +94,14 @@ const Home = () => {
               </h1>
             </div>
 
-            <div className="reveal delay-200 space-y-3">
-              {[
-                { text: 'Full Stack Developer', color: 'bg-purple-400' },
-                { text: 'Data Analyst', color: 'bg-cyan-400' },
-                { text: 'AI & Data Science Enthusiast', color: 'bg-blue-400' },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center space-x-3 text-lg">
-                  <div className={`w-2 h-2 ${item.color} rounded-full animate-pulse icon-neon`}></div>
-                  <span className="text-gray-200 font-medium">{item.text}</span>
-                </div>
-              ))}
+            <div className="reveal delay-200 h-10">
+              <span className="text-2xl md:text-3xl font-semibold text-purple-400 cursor-blink">
+                {displayedText}
+              </span>
             </div>
 
             <p className="reveal delay-300 text-lg text-gray-300 leading-relaxed max-w-2xl">
-              Results-driven B.Tech CSE student at VIT Chennai with <strong className="text-purple-300">1+ year</strong> of hands-on experience
-              in full stack development, Oracle NetSuite ERP, and software quality assurance. Delivered
-              production-grade web applications and managed <strong className="text-cyan-300">60+ product listings</strong> end-to-end.
+              B.Tech CSE student at VIT Chennai building <strong className="text-purple-300">AI-powered tools</strong> and scalable web applications.
             </p>
 
             {/* Achievement Badge */}
@@ -98,17 +119,16 @@ const Home = () => {
               >
                 <span className="flex items-center justify-center space-x-2">
                   <Briefcase size={18} />
-                  <span>View My Work</span>
-                  <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                  <span>View My Projects</span>
                 </span>
               </button>
               <a
                 href="https://drive.google.com/file/d/1MGSttXu9Qo8bRK1QERK8bsbPZKiUDScR/view?usp=sharing"
                 target="_blank" rel="noopener noreferrer"
-                className="px-8 py-4 glass-depth text-gray-200 rounded-xl font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="px-8 py-4 glass-depth text-gray-200 rounded-xl font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 border border-gray-700/50"
               >
                 <Download size={20} />
-                <span>View Resume</span>
+                <span>Download Resume</span>
               </a>
             </div>
 
@@ -156,7 +176,7 @@ const Home = () => {
                 {/* Glow rings */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
                 <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-3xl blur-sm glow-border"></div>
-                <div className="relative w-full h-full rounded-3xl overflow-hidden border border-purple-400/20">
+                <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
                   <img
                     src="https://i.postimg.cc/65XfWz15/Whats-App-Image-2025-02-25-at-09-30-17-de32e56a.jpg"
                     alt="Sri Rama Pavan Akshay Achanta"

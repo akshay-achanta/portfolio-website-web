@@ -21,10 +21,9 @@ const Education = () => {
       cgpa: "In Progress",
       note: "Expected Graduation: May 2028",
       highlights: [
-        "Pursuing B.Tech in CSE with focus on algorithms, data science, and software engineering",
-        "Active participation in technical events and hackathons via Binary Club",
-        "Maintained strong GPA with distinction in Algorithms and OOP",
-        "Focus on modern web technologies and scalable system design"
+        "Specializing in algorithms, data science, and scalable systems.",
+        "Active technical lead in Binary Club and hackathon participant.",
+        "Academic excellence with distinction in core CS modules."
       ],
       subjects: ["Data Structures & Algorithms", "Object Oriented Programming", "Database Management Systems", "Computer Networks", "Software Engineering", "Data Science & ML"],
       icon: GraduationCap,
@@ -57,10 +56,9 @@ const Education = () => {
       cgpa: "9.5 CGPA",
       note: "School merit distinction",
       highlights: [
-        "Achieved 9.5 CGPA — school merit distinction",
-        "Outstanding academic performance in core subjects",
-        "Strong foundation in Mathematics and Science",
-        "Active participation in school leadership activities"
+        "Achieved 10.0 CGPA equivalent (9.5 CGPA) merit distinction.",
+        "Demonstrated outstanding performance in core STEM subjects.",
+        "Active participant in school leadership and cultural activities."
       ],
       subjects: ["Mathematics", "Science", "English", "Social Studies"],
       icon: Award,
@@ -105,58 +103,85 @@ const Education = () => {
         </div>
 
         {/* Education Timeline */}
-        <div className="space-y-10 mb-16">
+        <div className="space-y-8 mb-16">
           {educationData.map((edu, index) => {
             const IconComponent = edu.icon
             const c = colorMap[edu.color]
+            
+            // Full detail for the first entry (VIT), compacted for others
+            if (index === 0) {
+              return (
+                <div key={index} className={`reveal delay-${(index + 1) * 100} relative`}>
+                  <div className="absolute left-6 top-16 w-0.5 h-24 timeline-line rounded-full"></div>
+                  <div className="flex items-start space-x-6">
+                    <div className={`flex-shrink-0 w-12 h-12 ${c.bg} rounded-full border ${c.border} flex items-center justify-center float-3d`}>
+                      <IconComponent className={c.text} size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <div className={`card-3d glass-depth rounded-2xl p-8 border border-gray-700/30 hover:border-gray-600/50 transition-all duration-300`}>
+                        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                          <div className="mb-4 lg:mb-0">
+                            <h3 className="text-2xl font-bold text-white mb-2 font-display">{edu.degree}</h3>
+                            <p className={`text-lg font-medium ${c.text} mb-1`}>{edu.institution}</p>
+                            <p className="text-xs text-gray-500 mb-2 italic">{edu.note}</p>
+                            <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm">
+                              <div className="flex items-center space-x-1"><Calendar size={14} /><span>{edu.duration}</span></div>
+                              <div className="flex items-center space-x-1"><MapPin size={14} /><span>{edu.location}</span></div>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className={`inline-block px-4 py-2 ${c.bg} rounded-full border ${c.border} mb-2`}>
+                              <span className={`text-sm font-medium ${c.text}`}>{edu.status}</span>
+                            </div>
+                            <div className="text-2xl font-bold text-white">{edu.cgpa}</div>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                          <div>
+                            <h4 className="text-lg font-semibold text-white mb-3">Key Highlights</h4>
+                            <ul className="space-y-2">
+                              {edu.highlights.map((h, i) => (
+                                <li key={i} className="flex items-start space-x-2 text-gray-300 text-sm">
+                                  <div className={`w-1.5 h-1.5 ${c.bg} rounded-full mt-2 flex-shrink-0 border ${c.border}`}></div>
+                                  <span>{h}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div>
+                            <h4 className="text-lg font-semibold text-white mb-3">Key Subjects</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {edu.subjects.map((s, i) => (
+                                <span key={i} className={`badge-3d px-3 py-1 bg-gradient-to-r ${c.gradient} ${c.text} rounded-lg text-xs border ${c.border}`}>{s}</span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+
+            // Compact version for Higher Secondary and Secondary
             return (
               <div key={index} className={`reveal delay-${(index + 1) * 100} relative`}>
                 {index < educationData.length - 1 && (
-                  <div className="absolute left-6 top-16 w-0.5 h-24 timeline-line rounded-full"></div>
+                  <div className="absolute left-6 top-16 w-0.5 h-12 timeline-line rounded-full opacity-30"></div>
                 )}
-                <div className="flex items-start space-x-6">
-                  <div className={`flex-shrink-0 w-12 h-12 ${c.bg} rounded-full border ${c.border} flex items-center justify-center float-3d`}>
-                    <IconComponent className={c.text} size={24} />
+                <div className="flex items-center space-x-6">
+                  <div className={`flex-shrink-0 w-12 h-12 ${c.bg} rounded-full border ${c.border} flex items-center justify-center`}>
+                    <IconComponent className={c.text} size={20} />
                   </div>
                   <div className="flex-1">
-                    <div className={`card-3d glass-depth rounded-2xl p-8 border border-gray-700/30 hover:border-gray-600/50 transition-all duration-300`}>
-                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                        <div className="mb-4 lg:mb-0">
-                          <h3 className="text-2xl font-bold text-white mb-2">{edu.degree}</h3>
-                          <p className={`text-lg font-medium ${c.text} mb-1`}>{edu.institution}</p>
-                          <p className="text-xs text-gray-500 mb-2 italic">{edu.note}</p>
-                          <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm">
-                            <div className="flex items-center space-x-1"><Calendar size={14} /><span>{edu.duration}</span></div>
-                            <div className="flex items-center space-x-1"><MapPin size={14} /><span>{edu.location}</span></div>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <div className={`inline-block px-4 py-2 ${c.bg} rounded-full border ${c.border} mb-2`}>
-                            <span className={`text-sm font-medium ${c.text}`}>{edu.status}</span>
-                          </div>
-                          <div className="text-2xl font-bold text-white">{edu.cgpa}</div>
-                        </div>
+                    <div className="glass-depth rounded-xl p-4 border border-gray-700/30 flex flex-col sm:flex-row sm:items-center justify-between">
+                      <div>
+                        <h3 className="text-lg font-bold text-white font-display">{edu.degree}</h3>
+                        <p className="text-sm text-gray-400">{edu.institution} • {edu.duration}</p>
                       </div>
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div>
-                          <h4 className="text-lg font-semibold text-white mb-3">Key Highlights</h4>
-                          <ul className="space-y-2">
-                            {edu.highlights.map((h, i) => (
-                              <li key={i} className="flex items-start space-x-2 text-gray-300 text-sm">
-                                <div className={`w-1.5 h-1.5 ${c.bg} rounded-full mt-2 flex-shrink-0 border ${c.border}`}></div>
-                                <span>{h}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-semibold text-white mb-3">Key Subjects</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {edu.subjects.map((s, i) => (
-                              <span key={i} className={`badge-3d px-3 py-1 bg-gradient-to-r ${c.gradient} ${c.text} rounded-lg text-xs border ${c.border}`}>{s}</span>
-                            ))}
-                          </div>
-                        </div>
+                      <div className="mt-2 sm:mt-0 text-right">
+                        <span className={`text-sm font-bold ${c.text}`}>{edu.cgpa}</span>
                       </div>
                     </div>
                   </div>
@@ -165,6 +190,7 @@ const Education = () => {
             )
           })}
         </div>
+
 
         {/* Relevant Coursework */}
         <div className="mb-16 reveal">

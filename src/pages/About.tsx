@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import {User, Heart, Target, Lightbulb, MapPin, Calendar, Award, Star, Zap} from 'lucide-react'
+import {Heart, Target, Lightbulb, MapPin, Calendar, Award, Star, Zap, Code, TrendingUp} from 'lucide-react'
 
 const useReveal = () => {
   useEffect(() => {
@@ -20,7 +20,7 @@ const About = () => {
     {
       title: "Best Intern of the Month",
       org: "GAOTek Inc.",
-      desc: "Awarded for delivering 100% sprint accuracy, proactive leadership, and sustainable quality improvements within the first month.",
+      desc: "Recognized for 100% sprint accuracy and proactive leadership during the first month.",
       icon: Award,
       color: "from-yellow-500/20 to-orange-500/20",
       border: "border-yellow-400/30",
@@ -29,7 +29,7 @@ const About = () => {
     {
       title: "Constant Academic Excellence",
       org: "VIT Chennai",
-      desc: "Maintained strong GPA with distinction in Algorithms, OOP, and applied engineering coursework throughout Year 1.",
+      desc: "Distinctive performance in Algorithms and OOP throughout Year 1.",
       icon: Star,
       color: "from-purple-500/20 to-blue-500/20",
       border: "border-purple-400/30",
@@ -38,7 +38,7 @@ const About = () => {
     {
       title: "Hackathon Organiser & Judge",
       org: "Rush-A-Thon, Binary Club",
-      desc: "Coordinated 30+ student teams across problem statement design, onboarding and multi-round evaluation.",
+      desc: "Lead organizer and judge for 30+ teams; managed onboarding and evaluation.",
       icon: Zap,
       color: "from-cyan-500/20 to-teal-500/20",
       border: "border-cyan-400/30",
@@ -46,28 +46,56 @@ const About = () => {
     }
   ]
 
-  const interests = [
-    "Full Stack Engineering", "Machine Learning & AI", "Data Analytics",
-    "Open Source Contribution", "Competitive Programming", "Technical Writing",
-    "Hackathons & Innovation Challenges"
+  const futureGoals = [
+    {
+      title: "Full-Stack Developer",
+      description: "Mastering frontend and backend to build complete, scalable applications.",
+      icon: Code,
+      timeline: "2025-2026",
+      color: "from-purple-500 to-blue-500"
+    },
+    {
+      title: "AI Integration Specialist",
+      description: "Combining web development with AI to create intelligent, data-driven apps.",
+      icon: Target,
+      timeline: "2026-2027",
+      color: "from-cyan-500 to-teal-500"
+    },
+    {
+      title: "Tech Leadership",
+      description: "Leading development teams and driving technical innovation in global projects.",
+      icon: TrendingUp,
+      timeline: "2027-2028",
+      color: "from-green-500 to-emerald-500"
+    }
   ]
-
   const cards = [
     {
-      title: "Personal Story", icon: User, border: "hover:border-purple-400/30", iconBg: "bg-purple-500/20", iconBorder: "border-purple-400/30", iconColor: "text-purple-400",
-      content: "I'm Sri Rama Pavan Akshay Achanta, a results-driven B.Tech CSE student at VIT Chennai (2024–2028) with 1+ year of hands-on experience in full stack development, Oracle NetSuite ERP, and software quality assurance. My journey has led me to deliver production-grade web applications and manage 60+ product listings end-to-end."
+      title: "What Drives Me", 
+      icon: Heart, 
+      border: "hover:border-cyan-400/30", 
+      iconBg: "bg-cyan-500/20", 
+      iconBorder: "border-cyan-400/30", 
+      iconColor: "text-cyan-400",
+      content: "I build robust systems—from automating ERP workflows with SuiteScript to engineering responsive React apps and ensuring quality through QA."
     },
     {
-      title: "What Drives Me", icon: Heart, border: "hover:border-cyan-400/30", iconBg: "bg-cyan-500/20", iconBorder: "border-cyan-400/30", iconColor: "text-cyan-400",
-      content: "I'm driven by the potential of data and scalable systems to create real-world impact. Whether it's automating ERP workflows with SuiteScript, engineering responsive websites using React, or identifying critical defects through rigorous QA testing, I find joy in building robust and efficient solutions."
+      title: "Goals & Aspirations", 
+      icon: Target, 
+      border: "hover:border-blue-400/30", 
+      iconBg: "bg-blue-500/20", 
+      iconBorder: "border-blue-400/30", 
+      iconColor: "text-blue-400",
+      content: "I aim to bridge AI insights with enterprise applications, expanding my expertise in ML and scalable systems to solve complex business problems."
     },
     {
-      title: "Goals & Aspirations", icon: Target, border: "hover:border-blue-400/30", iconBg: "bg-blue-500/20", iconBorder: "border-blue-400/30", iconColor: "text-blue-400",
-      content: "My goal is to become a versatile tech leader who can bridge the gap between AI-driven insights and enterprise-level applications. I am actively expanding my expertise in machine learning, data analytics, and scalable backend systems to build products that solve complex business problems."
-    },
-    {
-      title: "Philosophy", icon: Lightbulb, border: "hover:border-yellow-400/30", iconBg: "bg-yellow-500/20", iconBorder: "border-yellow-400/30", iconColor: "text-yellow-400",
-      content: "I believe in continuous learning and hands-on experience. Every project is an opportunity to grow, every challenge is a chance to innovate, and every collaboration is a step towards building something meaningful that makes a real difference."
+      title: "Philosophy", 
+      icon: Lightbulb, 
+      border: "hover:border-yellow-400/30", 
+      iconBg: "bg-yellow-500/20", 
+      iconBorder: "border-yellow-400/30", 
+      iconColor: "text-yellow-400",
+      content: "I believe in continuous learning. Every challenge is an opportunity to innovate and build something meaningful that makes a real difference."
     }
   ]
 
@@ -120,8 +148,8 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-white">Location</h3>
             </div>
-            <p className="text-gray-300 text-lg">Hyderabad, Telangana, India</p>
-            <p className="text-gray-400 mt-2">Available for remote opportunities worldwide</p>
+            <p className="text-gray-300 text-lg font-semibold">Chennai, Tamil Nadu <span className="text-gray-400 font-normal">(VIT University)</span></p>
+            <p className="text-gray-300 text-lg font-semibold mt-1">Hyderabad, Telangana <span className="text-gray-400 font-normal">(Home)</span></p>
           </div>
 
           <div className="card-3d reveal-right glass-depth rounded-2xl p-8 border border-gray-700/30 hover:border-orange-400/30 transition-all duration-300">
@@ -131,8 +159,8 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-white">Current Focus</h3>
             </div>
-            <p className="text-gray-300 text-lg">B.Tech Computer Science</p>
-            <p className="text-gray-400 mt-2">VIT University, Chennai — 2024–2028</p>
+            <p className="text-gray-300 text-lg">Building AI-powered productivity tools & full-stack SaaS apps</p>
+            <p className="text-gray-400 mt-2">B.Tech VIT Chennai — 2024–2028</p>
           </div>
         </div>
 
@@ -179,15 +207,31 @@ const About = () => {
           </div>
         </div>
 
-        {/* 💡 Interests */}
-        <div className="reveal bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-2xl p-8 border border-purple-400/20 glow-border">
-          <h3 className="text-2xl font-bold text-white text-center mb-6">Interests & Passions</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {interests.map((item, i) => (
-              <span key={i} className={`badge-3d px-4 py-2 glass-depth text-gray-300 rounded-full text-sm border border-gray-600/30 hover:border-purple-400/40 hover:text-purple-300 transition-all duration-300 delay-${i * 50}`}>
-                ✦ {item}
-              </span>
-            ))}
+        {/* Career Aspirations */}
+        <div className="reveal mb-16">
+          <h3 className="text-3xl font-bold text-center mb-12">
+            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              Career Aspirations
+            </span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {futureGoals.map((goal, index) => {
+              const IconComponent = goal.icon
+              return (
+                <div key={index} className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/30 hover:border-gray-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10 text-center">
+                  <div className="flex justify-center mb-6">
+                    <div className={`p-4 bg-gradient-to-r ${goal.color} bg-opacity-20 rounded-xl border border-gray-600/30 group-hover:scale-110 transition-transform duration-300`}>
+                      <IconComponent className="text-white" size={32} />
+                    </div>
+                  </div>
+                  <div className="inline-block px-3 py-1 bg-gray-700/50 text-gray-300 rounded-full text-sm border border-gray-600/30 mb-3">
+                    {goal.timeline}
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-3">{goal.title}</h4>
+                  <p className="text-gray-400 leading-relaxed">{goal.description}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
