@@ -7,6 +7,7 @@ import Portfolio from './pages/Portfolio'
 import Skills from './pages/Skills'
 import Education from './pages/Education'
 import Experience from './pages/Experience'
+import Certificates from './pages/Certificates'
 import Contact from './pages/Contact'
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
         </section>
         <section id="experience">
           <Experience />
+        </section>
+        <section id="certificates">
+          <Certificates />
         </section>
         <section id="contact">
           <Contact />
