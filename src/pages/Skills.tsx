@@ -13,49 +13,90 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Frontend & Backend",
+      title: "Programming Languages",
       icon: Code,
       skills: [
-        { name: "React.js", level: 90, color: "from-cyan-400 to-blue-500" },
-        { name: "FastAPI", level: 85, color: "from-green-400 to-teal-500" },
-        { name: "JavaScript (ES6+)", level: 85, color: "from-yellow-400 to-orange-500" },
-        { name: "HTML5 & CSS3", level: 95, color: "from-orange-500 to-red-500" },
-        { name: "REST APIs", level: 85, color: "from-blue-500 to-indigo-500" },
-        { name: "Java", level: 75, color: "from-red-500 to-orange-600" },
-        { name: "Responsive Design", level: 90, color: "from-purple-400 to-pink-500" }
+        { name: "Python", level: 90, color: "from-yellow-500 to-green-500" },
+        { name: "JavaScript", level: 85, color: "from-yellow-400 to-orange-500" },
+        { name: "TypeScript", level: 80, color: "from-blue-400 to-blue-600" },
+        { name: "SQL", level: 85, color: "from-blue-600 to-indigo-600" },
+        { name: "HTML", level: 95, color: "from-orange-500 to-red-500" },
+        { name: "CSS", level: 95, color: "from-blue-500 to-cyan-500" }
       ]
     },
     {
-      title: "Database & ERP",
+      title: "Frontend",
+      icon: Palette,
+      skills: [
+        { name: "React.js", level: 90, color: "from-cyan-400 to-blue-500" },
+        { name: "Vite", level: 85, color: "from-purple-500 to-pink-500" },
+        { name: "Tailwind CSS", level: 90, color: "from-teal-400 to-cyan-500" },
+        { name: "Next.js", level: 80, color: "from-gray-600 to-gray-800" }
+      ]
+    },
+    {
+      title: "Backend",
       icon: Database,
       skills: [
-        { name: "SQL & PostgreSQL", level: 85, color: "from-blue-600 to-indigo-600" },
-        { name: "Oracle NetSuite", level: 80, color: "from-orange-600 to-red-600" },
-        { name: "SuiteScript 2.0", level: 80, color: "from-orange-400 to-yellow-500" },
-        { name: "ERP Automation", level: 85, color: "from-red-400 to-rose-500" },
-        { name: "WordPress", level: 90, color: "from-blue-400 to-cyan-400" }
+        { name: "FastAPI", level: 85, color: "from-green-400 to-teal-500" },
+        { name: "Node.js", level: 80, color: "from-green-500 to-emerald-600" },
+        { name: "REST APIs", level: 85, color: "from-blue-500 to-indigo-500" },
+        { name: "JWT Auth", level: 85, color: "from-indigo-400 to-purple-500" },
+        { name: "OAuth 1.0/2.0", level: 80, color: "from-purple-500 to-pink-500" }
       ]
     },
     {
-      title: "AI / ML & Data",
-      icon: Brain,
+      title: "Databases",
+      icon: Database,
       skills: [
-        { name: "Python", level: 90, color: "from-yellow-500 to-green-500" },
-        { name: "Machine Learning", level: 80, color: "from-purple-500 to-indigo-500" },
-        { name: "Data Analysis", level: 85, color: "from-cyan-500 to-blue-500" },
-        { name: "Pandas & NumPy", level: 85, color: "from-teal-500 to-green-500" },
-        { name: "Scikit-learn", level: 75, color: "from-orange-500 to-red-500" }
+        { name: "PostgreSQL", level: 85, color: "from-blue-600 to-indigo-600" },
+        { name: "Supabase", level: 85, color: "from-emerald-400 to-green-600" },
+        { name: "MySQL", level: 80, color: "from-blue-400 to-cyan-500" },
+        { name: "MongoDB", level: 75, color: "from-green-500 to-emerald-700" }
       ]
     },
     {
-      title: "Testing & DevTools",
+      title: "ERP & NetSuite",
       icon: Globe,
       skills: [
-        { name: "Test Case Design", level: 90, color: "from-green-500 to-emerald-500" },
-        { name: "Regression Testing", level: 85, color: "from-teal-500 to-cyan-500" },
-        { name: "Git / GitHub", level: 85, color: "from-gray-600 to-gray-800" },
-        { name: "Postman & Jira", level: 85, color: "from-blue-500 to-cyan-500" },
-        { name: "Agile/Scrum", level: 90, color: "from-indigo-500 to-purple-500" }
+        { name: "Oracle NetSuite", level: 80, color: "from-orange-600 to-red-600" },
+        { name: "SuiteScript 2.0", level: 80, color: "from-orange-400 to-yellow-500" },
+        { name: "Token-Based Auth", level: 85, color: "from-blue-500 to-cyan-500" }
+      ]
+    },
+    {
+      title: "Data & ML",
+      icon: Brain,
+      skills: [
+        { name: "Pandas", level: 85, color: "from-blue-400 to-indigo-500" },
+        { name: "NumPy", level: 85, color: "from-teal-400 to-green-500" },
+        { name: "Scikit-learn", level: 75, color: "from-orange-500 to-red-500" },
+        { name: "Matplotlib", level: 75, color: "from-purple-400 to-pink-500" },
+        { name: "SQL Analytics", level: 85, color: "from-blue-500 to-cyan-500" }
+      ]
+    },
+    {
+      title: "DevOps & Cloud",
+      icon: Globe,
+      skills: [
+        { name: "Git", level: 85, color: "from-orange-500 to-red-500" },
+        { name: "GitHub", level: 85, color: "from-gray-600 to-gray-800" },
+        { name: "Vercel", level: 85, color: "from-gray-700 to-gray-900" },
+        { name: "Railway", level: 85, color: "from-purple-500 to-indigo-500" },
+        { name: "Netlify", level: 80, color: "from-cyan-400 to-teal-500" },
+        { name: "Linux CLI", level: 80, color: "from-gray-400 to-gray-600" }
+      ]
+    },
+    {
+      title: "Tools",
+      icon: Users,
+      skills: [
+        { name: "Postman", level: 85, color: "from-orange-400 to-red-500" },
+        { name: "WordPress", level: 90, color: "from-blue-400 to-cyan-400" },
+        { name: "Pantheon.io", level: 80, color: "from-yellow-400 to-orange-500" },
+        { name: "Figma", level: 80, color: "from-pink-400 to-purple-500" },
+        { name: "Trello", level: 85, color: "from-blue-500 to-cyan-500" },
+        { name: "Notion", level: 85, color: "from-gray-400 to-gray-600" }
       ]
     }
   ]

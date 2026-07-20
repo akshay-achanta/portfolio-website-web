@@ -13,23 +13,43 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: "Web Development Member",
-      company: "Binary Club — VIT Chennai",
+      title: "Full Stack Developer & Hackathon Organizer",
+      company: "Binary Club, VIT Chennai",
       duration: "Sep 2025 - Present",
-      location: "Chennai, TN",
-      type: "Club Member",
-      description: "Engineering production-grade web apps and mentoring students in technical excellence.",
+      location: "Chennai, India",
+      type: "Club Experience",
+      description: "Developing production-grade web applications and organizing technical events for the student community.",
       responsibilities: [
-        "Shipped 2+ responsive club websites using React and HTML/CSS.",
-        "Streamlined content workflows into a unified deployment pipeline.",
-        "Organized and judged 3+ hackathons and technical events.",
-        "Mentored 20+ students on technical and evaluation criteria."
+        "Developed and deployed 3+ responsive web applications for club events using HTML, CSS, JavaScript, and React.js.",
+        "Organized Rush-A-Thon hackathon as an Organizing Committee Member, coordinating logistics for 100+ participants.",
+        "Evaluated 15+ competing teams as a Judge, assessing innovation, technical implementation, and presentation quality.",
+        "Collaborated with a 5-member web team, reducing project turnaround time by 20% through structured Git workflows."
       ],
-      technologies: ["React.js", "HTML/CSS", "JavaScript", "Responsive Design", "CI/CD", "Collaboration"],
+      technologies: ["React.js", "HTML/CSS", "JavaScript", "Git", "Leadership"],
       outcomes: [
-        "Reduced update time via automated pipelines.",
-        "Delivered interactive web platforms for community events.",
-        "Fostered technical growth within the student community."
+        "Reduced project turnaround time by 20%.",
+        "Successfully coordinated 100+ participant hackathons.",
+        "Delivered responsive web apps for events."
+      ]
+    },
+    {
+      title: "Python Full Stack Developer",
+      company: "Pragadas Technologies",
+      duration: "Dec 2025 - Jan 2026",
+      location: "Remote",
+      type: "Internship",
+      description: "Building end-to-end full stack solutions with FastAPI and React, focusing on performance and security.",
+      responsibilities: [
+        "Built and maintained 5+ RESTful backend APIs using Python (FastAPI), integrating with PostgreSQL and reducing API response time by 30%.",
+        "Engineered React-based frontend interfaces connected to backend services, supporting 3 core application workflows.",
+        "Implemented JWT-based authentication and role-based session management, securing access for 100+ user accounts.",
+        "Participated in 10+ code reviews and contributed to CI/CD deployment pipelines, improving release cycle efficiency."
+      ],
+      technologies: ["Python", "FastAPI", "React", "PostgreSQL", "JWT", "CI/CD"],
+      outcomes: [
+        "Reduced API response time by 30%.",
+        "Secured access for 100+ user accounts.",
+        "Improved release cycle efficiency."
       ]
     },
     {
@@ -38,36 +58,37 @@ const Experience = () => {
       duration: "Aug 2025 - Dec 2025",
       location: "Remote",
       type: "Internship",
-      description: "Leading cross-functional teams in product publishing and digital outreach.",
+      description: "Leading a content publishing team and driving accuracy in product listings.",
       responsibilities: [
-        "Published 60-70 WordPress product listings with 100% sprint accuracy.",
-        "Promoted to Assistant Squad Lead within 6 weeks, managing 5+ peers.",
-        "Boosted engagement by 15% through optimized Pantheon.io outreach campaigns."
+        "Managed and published content for 65+ product pages on WordPress, maintaining 98% accuracy rate across all listings.",
+        "Promoted to Assistant Squad Lead within 60 days based on top-tier performance, overseeing a team of 6 interns.",
+        "Coordinated daily task pipelines for 6 team members, achieving 95% on-time delivery rate across all assigned projects.",
+        "Awarded Best Intern of the Month by GAOTek Inc. for exceptional leadership, initiative, and 95%+ on-time delivery rate."
       ],
-      technologies: ["WordPress", "Pantheon.io", "Leadership", "Agile", "Digital Marketing"],
+      technologies: ["WordPress", "Leadership", "Team Management", "Agile"],
       outcomes: [
-        "Standardized QA checklists, speeding up publishing turnaround.",
-        "Scaled leadership responsibilities rapidly.",
-        "Measurably increased engagement for the ISP team."
+        "Maintained 98% accuracy across 65+ product pages.",
+        "Achieved 95% on-time delivery rate.",
+        "Awarded Best Intern of the Month."
       ]
     },
     {
-      title: "NetSuite Developer & QA Intern",
-      company: "Pragdas Technologies PVT LTD",
+      title: "NetSuite Developer & QA Engineer",
+      company: "Pragadas Technologies",
       duration: "May 2025 - Jun 2025",
-      location: "Hyderabad, Telangana",
+      location: "Hyderabad, India",
       type: "Internship",
       description: "Automating enterprise ERP workflows and executing comprehensive QA testing.",
       responsibilities: [
-        "Automated core ERP workflows using SuiteScript 2.0 (Oracle NetSuite).",
-        "Executed 100+ test cases and identified 15+ critical defects.",
-        "Authored system documentation adopted by cross-functional teams."
+        "Customized 4+ Oracle NetSuite ERP modules using SuiteScript 2.0 (JavaScript), streamlining inventory and order management.",
+        "Built RESTful API integrations between NetSuite and 2 third-party platforms using OAuth 1.0 and Token-Based Authentication.",
+        "Designed and executed 30+ manual and automated test cases, improving regression coverage by 25% over 3 sprint cycles."
       ],
-      technologies: ["Oracle NetSuite", "SuiteScript 2.0", "ERP Automation", "QA Testing", "REST APIs"],
+      technologies: ["Oracle NetSuite", "SuiteScript 2.0", "QA Testing", "REST APIs", "OAuth 1.0"],
       outcomes: [
-        "Reduced manual data-entry time by 40% per cycle.",
-        "Increased system reliability through proactive bug triage.",
-        "Streamlined onboarding via robust flow documentation."
+        "Streamlined inventory and order management.",
+        "Integrated ERP with third-party platforms.",
+        "Improved regression coverage by 25%."
       ]
     }
   ]

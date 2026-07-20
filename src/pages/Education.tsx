@@ -53,10 +53,10 @@ const Education = () => {
       duration: "2021 – 2022",
       location: "Hyderabad, Telangana",
       status: "Completed",
-      cgpa: "9.5 CGPA",
+      cgpa: "9.8 CGPA",
       note: "School merit distinction",
       highlights: [
-        "Achieved 10.0 CGPA equivalent (9.5 CGPA) merit distinction.",
+        "Achieved 9.8 CGPA merit distinction.",
         "Demonstrated outstanding performance in core STEM subjects.",
         "Active participant in school leadership and cultural activities."
       ],
@@ -67,12 +67,13 @@ const Education = () => {
   ]
 
   const coursework = [
-    { name: "Analysis of Algorithms", icon: "⚡" },
-    { name: "Database Management Systems (DBMS)", icon: "🗄️" },
-    { name: "Object-Oriented Programming (OOP)", icon: "🔷" },
-    { name: "Computer Networks & Protocols", icon: "🌐" },
-    { name: "Data Science & Machine Learning", icon: "🤖" },
-    { name: "Software Engineering & SDLC", icon: "🔧" },
+    { name: "DSA", icon: "⚡" },
+    { name: "DBMS", icon: "🗄️" },
+    { name: "Computer Networks", icon: "🌐" },
+    { name: "Theory of Computation", icon: "⚙️" },
+    { name: "OS", icon: "🖥️" },
+    { name: "Machine Learning", icon: "🤖" },
+    { name: "Business Statistics", icon: "📊" },
   ]
 
   const colorMap: Record<string, { border: string; bg: string; text: string; gradient: string }> = {

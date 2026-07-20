@@ -1,57 +1,26 @@
-import {ExternalLink, Github, Building, Globe, CheckCircle, Layers, Monitor} from 'lucide-react'
+import {ExternalLink, Github, Users, Globe, CheckCircle} from 'lucide-react'
 
 const Portfolio = () => {
   const projects = [
     {
-      title: "AI-Driven Daily Tracker (isaw)",
-      description: "A productivity app delivering AI-based insights into daily habits using FastAPI and React.",
-      tech: ["React", "FastAPI", "PostgreSQL", "Recharts"],
-      category: "Full Stack AI Project",
-      status: "Completed",
+      title: "ScanNHelp",
+      description: "QR/NFC-Based Product & Health Information Platform with field-level visibility toggles and Role-Based Access Control (RBAC). Built to allow users to scan a QR/NFC tag and instantly access product details, health info, and emergency contacts — securely filtered per role.",
+      tech: ["FastAPI", "React", "PostgreSQL", "Tailwind CSS", "JWT", "QR/NFC"],
+      category: "Full Stack Platform",
+      status: "In Progress",
       icon: Globe,
-      gradient: "from-purple-500 to-cyan-500",
-      github: "https://github.com/akshay-achanta/isaw",
-      live: "https://poetic-reflection-production.up.railway.app"
+      gradient: "from-green-500 to-emerald-500",
+      github: "https://github.com/akshay-achanta",
     },
     {
-      title: "SeaSphere",
-      description: "Modular collaborative workspace with real-time dashboards and team widgets.",
-      tech: ["React", "Supabase", "Vite"],
-      category: "Full Stack SaaS App",
+      title: "Project Bailey Cranes — HRMS",
+      description: "Human Resource Management System developed as part of QA and ERP testing for Bailey Cranes. Includes employee lifecycle management, attendance tracking, payroll processing modules, and comprehensive end-to-end QA testing with defect tracking and regression coverage.",
+      tech: ["Oracle NetSuite", "SuiteScript 2.0", "Jira", "Regression Testing", "Functional Testing", "REST APIs"],
+      category: "Enterprise HRMS / QA Project",
       status: "Completed",
-      icon: Layers,
-      gradient: "from-blue-500 to-cyan-500",
-      github: "https://github.com/akshay-achanta/SeaSphere",
-      live: "https://sea-sphere.vercel.app"
+      icon: Users,
+      gradient: "from-orange-500 to-red-500",
     },
-    {
-      title: "vSkillIU Website Design",
-      description: "Conversion-optimized landing page for an online learning platform with modern UI/UX.",
-      tech: ["React.js", "Tailwind CSS", "UI/UX Design"],
-      category: "Frontend Design Project",
-      status: "Completed",
-      icon: Monitor,
-      gradient: "from-green-500 to-teal-500",
-      github: "https://github.com/akshay-achanta/v0-vskilliu-website-design"
-    },
-    {
-      title: "Project JYSWMS",
-      description: "WMS automation via Oracle NetSuite and SuiteScript 2.0 to reduce workflow exceptions.",
-      tech: ["NetSuite", "SuiteScript 2.0", "REST APIs"],
-      category: "Enterprise ERP Project",
-      status: "Completed",
-      icon: Building,
-      gradient: "from-blue-500 to-indigo-500"
-    },
-    {
-      title: "Project Bailey Crances",
-      description: "End-to-End QA testing and defect tracking for complex application modules.",
-      tech: ["Jira", "Regression Testing", "Functional Testing"],
-      category: "Quality Assurance Project",
-      status: "Completed",
-      icon: CheckCircle,
-      gradient: "from-green-500 to-teal-500"
-    }
   ]
 
   return (
