@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import {Briefcase, Calendar, MapPin, Building, Code, Target, TrendingUp, ChevronDown, ChevronUp} from 'lucide-react'
 
 const Experience = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),

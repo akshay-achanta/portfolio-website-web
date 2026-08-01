@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Code, Brain, Globe, Database, Palette, Users, Server, Wrench, ChevronDown, ChevronUp, BarChart2 } from 'lucide-react'
 
 const Skills = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0)
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
 
   const skillCategories = [
     {

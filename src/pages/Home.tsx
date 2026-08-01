@@ -102,11 +102,15 @@ const Home = () => {
             B.Tech CSE student at VIT Chennai building <strong className="text-cyan-300">AI-powered tools</strong> and scalable web applications.
           </p>
 
-          {/* Achievement Badge */}
-          <div className="reveal delay-400">
+          {/* Achievement Badges */}
+          <div className="reveal delay-400 flex flex-wrap gap-4">
             <div className="inline-flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-xl border border-yellow-400/40 backdrop-blur-md badge-3d">
               <Award className="text-yellow-400 star-pulse drop-shadow-md" size={20} />
               <span className="text-yellow-100 text-sm font-semibold drop-shadow-sm">Best Intern of the Month — GAOTek Inc.</span>
+            </div>
+            <div className="inline-flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl border border-cyan-400/40 backdrop-blur-md badge-3d">
+              <Briefcase className="text-cyan-400 star-pulse drop-shadow-md" size={20} />
+              <span className="text-cyan-100 text-sm font-semibold drop-shadow-sm">Data Analysis Intern — Zelar Soft</span>
             </div>
           </div>
 
@@ -121,12 +125,12 @@ const Home = () => {
               </span>
             </button>
             <a
-              href="https://drive.google.com/file/d/1MGSttXu9Qo8bRK1QERK8bsbPZKiUDScR/view?usp=sharing"
+              href="https://drive.google.com/file/d/1nVl-SRWIyyyfijtHGiSTp8JVkb90Vga4/view?usp="
               target="_blank" rel="noopener noreferrer"
               className="px-8 py-4 bg-gray-900/50 backdrop-blur-md text-white rounded-xl font-bold hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 border border-gray-600/50 hover:bg-gray-800/60"
             >
               <Download size={20} />
-              <span>Download Resume</span>
+              <span>View Resume</span>
             </a>
           </div>
 
