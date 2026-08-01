@@ -106,9 +106,13 @@ const About = () => {
               <Star className="text-purple-400" size={24} />
               Professional Summary
             </h3>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Results-driven Computer Science & Engineering student at VIT Chennai with hands-on experience in full stack development, Oracle NetSuite ERP customization, Python backend engineering, and software quality assurance. Delivered 2+ production-grade web applications, managed 65+ product listings end-to-end, and led a 6-member cross-functional team. Recognized as Best Intern of the Month at GAOTek Inc. for consistent performance and leadership. Passionate about machine learning, data analytics, and AI-integrated product development.
-            </p>
+            <div className="text-gray-300 text-lg leading-relaxed space-y-4">
+              <p>Hey, I'm Akshay — a Computer Science & Engineering student at VIT Chennai who likes turning ideas into things people can actually use.</p>
+              <p>I split my time between full stack development and data analysis. On one side, that means building web apps with React, FastAPI, and PostgreSQL — things like ScanNHelp, a QR/NFC platform I built for secure product and health information access. On the other, it means digging into datasets with SQL and Python to find patterns that actually matter to a business, something I got to do hands-on during my data analysis internship at Zelar Soft.</p>
+              <p>I've also spent time in less obvious corners of tech — running QA test cycles and leading a small team of interns at GAOTek Inc., where I picked up as much about people and process as I did about code.</p>
+              <p>Right now I'm sharpening my machine learning skills and thinking about how AI can be woven into products in ways that feel useful rather than gimmicky. When I'm not coding, I'm probably organizing or judging a hackathon back at VIT.</p>
+              <p>Take a look around — and if something here sparks an idea, let's talk.</p>
+            </div>
           </div>
         </div>
 

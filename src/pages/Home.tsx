@@ -5,7 +5,7 @@ const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null)
   
   // Typewriter Effect
-  const roles = ["Full Stack Developer", "Data Analyst", "AI & Data Science Enthusiast"];
+  const roles = ["Full Stack Developer", "Data Analyst", "AI & ML Enthusiast"];
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);

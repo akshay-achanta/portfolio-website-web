@@ -1,4 +1,4 @@
-import {ExternalLink, Github, Users, Globe, CheckCircle} from 'lucide-react'
+import {ExternalLink, Github, Globe, CheckCircle} from 'lucide-react'
 
 const Portfolio = () => {
   const projects = [
@@ -11,16 +11,7 @@ const Portfolio = () => {
       icon: Globe,
       gradient: "from-green-500 to-emerald-500",
       github: "https://github.com/akshay-achanta",
-    },
-    {
-      title: "Project Bailey Cranes — HRMS",
-      description: "Human Resource Management System developed as part of QA and ERP testing for Bailey Cranes. Includes employee lifecycle management, attendance tracking, payroll processing modules, and comprehensive end-to-end QA testing with defect tracking and regression coverage.",
-      tech: ["Oracle NetSuite", "SuiteScript 2.0", "Jira", "Regression Testing", "Functional Testing", "REST APIs"],
-      category: "Enterprise HRMS / QA Project",
-      status: "Completed",
-      icon: Users,
-      gradient: "from-orange-500 to-red-500",
-    },
+    }
   ]
 
   return (
